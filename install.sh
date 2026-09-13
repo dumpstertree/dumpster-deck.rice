@@ -12,9 +12,9 @@ sudo pacman -S --needed \
     hypridle \
     hyprlauncher
 
-
 mkdir -p ~/.config
 
+rm -rf ~/.config/hypr
 cp -r hypr ~/.config/
 
 
