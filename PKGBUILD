@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 set -euo pipefail
@@ -326,4 +325,3 @@ echo "or:"
 echo
 echo "    exec Hyprland"
 echo
-```
