@@ -11,7 +11,8 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
-    hyprlauncher
+    hyprlauncher \
+    alacrity
 
 mkdir -p ~/.config
 
