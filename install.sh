@@ -6,7 +6,8 @@ pacman -Syu
 
 echo "Installing Hyprland Ecosystem"
 sudo pacman -S --needed \
-    hyprland \
+    # hyprland \
+    sway \
     hyprpaper \
     hyprlock \
     hypridle \
@@ -15,7 +16,10 @@ sudo pacman -S --needed \
 mkdir -p ~/.config
 
 rm -rf ~/.config/hypr
-cp -r hypr ~/.config/
+cp -r hypr ~/.config/hypr
+
+rm -rf ~/.config/sway
+cp -r sway ~/.config/sway
 
 
 # echo "Installing Applications"
