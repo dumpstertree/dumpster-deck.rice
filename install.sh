@@ -17,10 +17,10 @@ sudo pacman -S --needed \
 mkdir -p ~/.config
 
 rm -rf ~/.config/hypr
-cp -r hypr ~/.config/hypr
+cp -r ./hypr ~/.config/hypr
 
 rm -rf ~/.config/sway
-cp -r sway ~/.config/sway
+cp -r ./sway ~/.config/sway
 
 
 # echo "Installing Applications"
