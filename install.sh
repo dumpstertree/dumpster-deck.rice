@@ -23,8 +23,8 @@ cp -r ./sway ~/.config/sway
 
 # echo "Installing Applications"
 sudo pacman -S --needed \
-#     waybar \
     kitty
+#     waybar \
 #     thunar \
 #     librewolf
 
