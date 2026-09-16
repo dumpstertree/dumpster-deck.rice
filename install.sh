@@ -29,6 +29,7 @@ sudo pacman -S --needed \
     waybar \
     thunar
 
+hyprpm update
 hyprpm add https://github.com/dawsers/hyprscroller
 hyprpm enable hyprscroller
 
