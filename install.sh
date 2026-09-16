@@ -2,7 +2,7 @@
 
 set -e
 
-pacman -Syu
+sudo pacman -Syu
 
 echo "Installing Hyprland Ecosystem"
 sudo pacman -S --needed \
