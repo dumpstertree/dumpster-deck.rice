@@ -18,8 +18,10 @@ mkdir -p ~/.config
 rm -rf ~/.config/hypr
 cp -r hypr ~/.config/hypr
 
-rm -rf ~/.config/sway
-cp -r ./sway ~/.config/sway
+rm -rf ~/.config/waybar
+cp -r hypr ~/.config/waybar
+
+
 
 
 # echo "Installing Applications"
@@ -29,11 +31,10 @@ sudo pacman -S --needed \
     waybar \
     thunar
 
-hyprpm update
-hyprpm update
-hyprpm add https://github.com/gfhdhytghd/hymission
-hyprpm enable hymission
-hyprpm reload
+# hyprpm update
+# hyprpm add https://github.com/gfhdhytghd/hymission
+# hyprpm enable hymission
+# hyprpm reload
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
