@@ -6,13 +6,13 @@ pacman -Syu
 
 echo "Installing Hyprland Ecosystem"
 sudo pacman -S --needed \
-    # hyprland \
-    sway \
+    hyprland \
+    #sway \
     hyprpaper \
     hyprlock \
     hypridle \
     hyprlauncher \
-    alacrity
+    #alacrity
 
 mkdir -p ~/.config
 
