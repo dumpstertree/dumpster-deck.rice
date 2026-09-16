@@ -89,13 +89,13 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 10,
 
-        border_size = 2,
+        border_size = 1,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {"rgb(f29ff5)", "rgb(f29ff5)"}, angle = 45 },
+            inactive_border = "rgb(f29ff5)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -108,7 +108,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 2,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
@@ -116,14 +116,14 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
         },
 
         blur = {
-            enabled   = true,
+            enabled   = false,
             size      = 3,
             passes    = 1,
             vibrancy  = 0.1696,
@@ -243,12 +243,6 @@ hl.gesture({
 })
 
 
-hl.gesture({
-    fingers = 3,
-    direction = "vertical",
-    action = "menu"
-})
-
 -- Example per-device config
 -- See https://wiki.hypr.land/configuring/core/devices/ for more
 hl.device({
@@ -367,4 +361,20 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+--------------------------------------
+------PLUGINS -----------------------
+------------------------------------
+
+
+hl.config({
+    plugin = {
+        hyprbars = {
+	        ["col.text"] = "rgb(000000)",
+            bar_color = "rgb(f29ff5)",
+            bar_height = 15,
+	        bar_text_align = left,
+        },
+    },
 })
