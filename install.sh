@@ -10,7 +10,7 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
-    hyprlauncher \
+    hyprlauncher
 
 mkdir -p ~/.config
 
@@ -24,7 +24,7 @@ cp -r ./sway ~/.config/sway
 # echo "Installing Applications"
 sudo pacman -S --needed \
 #     waybar \
-    kitty \
+    kitty
 #     thunar \
 #     librewolf
 
