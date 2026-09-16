@@ -49,7 +49,7 @@ local menu        = "hyprlauncher"
 -- end)
 
  hl.on("hyprland.start", function () 
-   hl.exec_cmd("hyprpaper & hypridle & hyprlauncher")
+   hl.exec_cmd("hyprpaper & hypridle & hyprlauncher & waybar")
 end)
 
 -------------------------------
