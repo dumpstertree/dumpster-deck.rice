@@ -11,7 +11,8 @@ sudo pacman -S --needed \
     hyprlock \
     hypridle \
     hyprlauncher \
-    hyprpm
+    hyprpm \
+    rofi
 
 mkdir -p ~/.config
 
@@ -21,6 +22,8 @@ cp -r hypr ~/.config/hypr
 rm -rf ~/.config/waybar
 cp -r waybar ~/.config/waybar
 
+rm -rf ~/.config/rofi
+cp -r rofi ~/.config/rofi
 
 
 
@@ -29,17 +32,17 @@ sudo pacman -S --needed \
     kitty \
     librewolf \
     waybar \
-    thunar
+    thunar \
 
- hyprpm update
+ # hyprpm update
  
- hyprpm add https://github.com/KZDKM/Hyprspace
- hyprpm add https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
+ # hyprpm add https://github.com/KZDKM/Hyprspace
+ # hyprpm add https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
 
- hyprpm enable hyprspace
- hyprpm enable hyprbars
+ # hyprpm enable hyprspace
+ # hyprpm enable hyprbars
  
- hyprpm reload
+ # hyprpm reload
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
