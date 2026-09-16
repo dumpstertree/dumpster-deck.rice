@@ -1,14 +1,3 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/configuring/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
 
 ------------------
 ---- MONITORS ----
@@ -37,17 +26,6 @@ local menu        = "hyprlauncher"
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/configuring/core/autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
-
  hl.on("hyprland.start", function () 
    hl.exec_cmd("hyprpaper & hypridle & waybar")
 end)
@@ -56,30 +34,8 @@ end)
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
--- See https://wiki.hypr.land/configuring/core/environment-variables/
-
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
-
------------------------
------ PERMISSIONS -----
------------------------
-
--- See https://wiki.hypr.land/configuring/core/advanced-configuration/permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
-
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
-
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -90,9 +46,7 @@ hl.config({
     general = {
         gaps_in  = 5,
         gaps_out = 10,
-
         border_size = 1,
-
         col = {
             active_border   = { colors = {"rgb(f29ff5)", "rgb(f29ff5)"}, angle = 45 },
             inactive_border = "rgb(f29ff5)",
@@ -110,24 +64,8 @@ hl.config({
     decoration = {
         rounding       = 2,
         rounding_power = 2,
-
-        -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 1.0,
-
-        shadow = {
-            enabled      = false,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
-
-        blur = {
-            enabled   = false,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
-        },
+        inactive_opacity = 0.5,
     },
 
     animations = {
@@ -225,13 +163,10 @@ hl.config({
         kb_model   = "",
         kb_options = "",
         kb_rules   = "",
-
         follow_mouse = 1,
-
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
-
         touchpad = {
-            natural_scroll = false,
+            natural_scroll = true,
         },
     },
 })
@@ -259,8 +194,8 @@ hl.device({
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(
-    mainMod .. " + space",
-    hl.dsp.exec_cmd("pgrep -x hyprlauncher >/dev/null && pkill -x hyprlauncher || hyprlauncher")
+    mainMod .. " + SPACE",
+    hl.dsp.exec_cmd("if pgrep -x hyprlauncher >/dev/null; then pkill -x hyprlauncher; else hyprlauncher; fi")
 )
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
@@ -366,7 +301,6 @@ hl.window_rule({
 --------------------------------------
 ------PLUGINS -----------------------
 ------------------------------------
-
 
 hl.config({
     plugin = {
