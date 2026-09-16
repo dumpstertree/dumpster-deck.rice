@@ -49,7 +49,7 @@ local menu        = "hyprlauncher"
 -- end)
 
  hl.on("hyprland.start", function () 
-   hl.exec_cmd("hyprpaper & hypridle & hyprlauncher & waybar")
+   hl.exec_cmd("hyprpaper & hypridle & waybar")
 end)
 
 -------------------------------
@@ -264,7 +264,10 @@ hl.device({
 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-h1.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
+hl.bind(
+    mainMod .. " + space",
+    hl.dsp.exec_cmd("pgrep -x hyprlauncher >/dev/null && pkill -x hyprlauncher || hyprlauncher")
+)
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -273,7 +276,6 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
