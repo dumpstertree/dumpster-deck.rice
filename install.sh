@@ -31,10 +31,15 @@ sudo pacman -S --needed \
     waybar \
     thunar
 
-# hyprpm update
-# hyprpm add https://github.com/gfhdhytghd/hymission
-# hyprpm enable hymission
-# hyprpm reload
+ hyprpm update
+ 
+ hyprpm add https://github.com/KZDKM/Hyprspace
+ hyprpm add https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
+
+ hyprpm enable hyprspace
+ hyprpm enable hyprbars
+ 
+ hyprpm reload
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
