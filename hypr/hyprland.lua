@@ -264,8 +264,6 @@ hl.device({
 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-
-# App-Launcher
 h1.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
