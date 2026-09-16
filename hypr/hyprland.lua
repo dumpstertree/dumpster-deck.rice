@@ -196,7 +196,7 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(
     mainMod .. " + SPACE",
-    hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill -x rofi; else rofi; fi")
+    hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill -x rofi; else rofi -show drun; fi")
 )
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
