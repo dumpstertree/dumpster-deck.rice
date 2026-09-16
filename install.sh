@@ -19,7 +19,7 @@ rm -rf ~/.config/hypr
 cp -r hypr ~/.config/hypr
 
 rm -rf ~/.config/waybar
-cp -r hypr ~/.config/waybar
+cp -r waybar ~/.config/waybar
 
 
 
