@@ -23,10 +23,10 @@ cp -r ./sway ~/.config/sway
 
 # echo "Installing Applications"
 sudo pacman -S --needed \
-    kitty
-#     waybar \
-#     thunar \
-#     librewolf
+    kitty \
+    librewolf \
+    waybar \
+    thunar \
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
