@@ -30,8 +30,10 @@ sudo pacman -S --needed \
     thunar
 
 hyprpm update
-hyprpm add https://github.com/dawsers/hyprscroller
-hyprpm enable hyprscroller
+hyprpm update
+hyprpm add https://github.com/gfhdhytghd/hymission
+hyprpm enable hymission
+hyprpm reload
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
