@@ -10,7 +10,8 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
-    hyprlauncher
+    hyprlauncher \
+    hyprpm
 
 mkdir -p ~/.config
 
@@ -26,7 +27,10 @@ sudo pacman -S --needed \
     kitty \
     librewolf \
     waybar \
-    thunar \
+    thunar
+
+hyprpm add https://github.com/dawsers/hyprscroller
+hyprpm enable hyprscroller
 
 # echo "Installing System Dependencies"
 # sudo pacman -S --needed \
