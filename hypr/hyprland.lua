@@ -242,6 +242,13 @@ hl.gesture({
     action = "workspace"
 })
 
+
+hl.gesture({
+    fingers = 3,
+    direction = "vertical",
+    action = "menu"
+})
+
 -- Example per-device config
 -- See https://wiki.hypr.land/configuring/core/devices/ for more
 hl.device({
@@ -254,7 +261,12 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
+
+
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+
+# App-Launcher
+h1.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
