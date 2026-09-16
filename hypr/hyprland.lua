@@ -19,7 +19,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "rofi"
 
 
 -------------------
@@ -196,7 +196,7 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(
     mainMod .. " + SPACE",
-    hl.dsp.exec_cmd("if pgrep -x hyprlauncher >/dev/null; then pkill -x hyprlauncher; else hyprlauncher; fi")
+    hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill -x rofi; else rofi; fi")
 )
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
