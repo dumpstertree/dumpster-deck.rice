@@ -1,170 +1,71 @@
-/*configuration {
-/*	modes: "window,drun,run,ssh";*/
-/*	font: "mono 5";*/
-/*	location: 0;*/
-/*	yoffset: 0;*/
-/*	xoffset: 0;*/
-/*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
-/*	preview-cmd: ;*/
-/*	on-selection-changed: ;*/
-/*	on-mode-changed: ;*/
-/*	on-entry-accepted: ;*/
-/*	on-menu-canceled: ;*/
-/*	on-menu-error: ;*/
-/*	on-screenshot-taken: ;*/
-/*	terminal: "rofi-sensible-terminal";*/
-/*	ssh-client: "ssh";*/
-/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
-/*	run-command: "{cmd}";*/
-/*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}";*/
-/*	window-command: "wmctrl -i -R {window}";*/
-/*	window-match-fields: "all";*/
-/*	icon-theme: ;*/
-/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
-/*	drun-categories: ;*/
-/*	drun-exclude-categories: ;*/
-/*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
-/*	drun-url-launcher: "xdg-open";*/
-/*	disable-history: false;*/
-/*	ignored-prefixes: "";*/
-/*	sort: false;*/
-/*	sorting-method: "normal";*/
-/*	case-sensitive: false;*/
-/*	case-smart: false;*/
-/*	cycle: true;*/
-/*	sidebar-mode: false;*/
-/*	hover-select: false;*/
-/*	eh: 1;*/
-/*	auto-select: false;*/
-/*	parse-hosts: false;*/
-/*	parse-known-hosts: true;*/
-/*	combi-modes: "window,run";*/
-/*	matching: "normal";*/
-/*	tokenize: true;*/
-/*	m: "-5";*/
-/*	filter: ;*/
-/*	dpi: -1;*/
-/*	threads: 0;*/
-/*	scroll-method: 0;*/
-/*	window-format: "{w}    {c}   {t}";*/
-/*	click-to-exit: true;*/
-/*	global-kb: false;*/
-/*	max-history-size: 25;*/
-/*	combi-hide-mode-prefix: false;*/
-/*	combi-display-format: "{mode} {text}";*/
-/*	matching-negate-char: '-' /* unsupported */;*/
-/*	cache-dir: ;*/
-/*	window-thumbnail: false;*/
-/*	drun-use-desktop-cache: false;*/
-/*	drun-reload-desktop-cache: false;*/
-/*	normalize-match: false;*/
-/*	steal-focus: false;*/
-/*	application-fallback-icon: ;*/
-/*	refilter-timeout-limit: 300;*/
-/*	xserver-i300-workaround: false;*/
-/*	completer-mode: "filebrowser";*/
-/*	imdkit: true;*/
-/*	pid: "/run/user/1000/rofi.pid";*/
-/*	display-window: ;*/
-/*	display-run: ;*/
-/*	display-ssh: ;*/
-/*	display-drun: ;*/
-/*	display-combi: ;*/
-/*	display-keys: ;*/
-/*	display-filebrowser: ;*/
-*{
-    font:   "Roboto 12";
+@theme "/usr/share/rofi/themes/arthur.rasi"
 
-    background-color:   transparent;
-    text-color:         #f29ff5;
 
-    margin:     0px;
-    padding:    0px;
-    spacing:    0px;
+/* === Global style === */
+* {
+    border-radius: 2px;
+    border-color: #f29ff5;       /* pink borders */
 }
 
-
-window {
-    location:       north;
-    y-offset:       calc(50% - 176px);
-    width:          480;
-    border-radius:  24px;
-
-    background-color:   @bg0;
+/* === Selected entries === */
+element selected normal {
+    background-color: #f29ff5;   /* pink tile */
+    text-color: #000000;         /* black text */
 }
 
-mainbox {
-    padding:    12px;
+element selected active {
+    background-color: #f29ff5;
+    text-color: #000000;
 }
 
+element selected urgent {
+    background-color: #f29ff5;
+    text-color: #000000;
+}
+
+/* === Unselected entries === */
+element normal normal,
+element normal active,
+element normal urgent,
+element alternate normal,
+element alternate active,
+element alternate urgent {
+    text-color: #f29ff5;         /* pink text */
+    background-color: transparent;
+}
+
+/* === Input bar === */
 inputbar {
-    background-color:   @bg1;
-    border-color:       @bg3;
-
-    border:         2px;
-    border-radius:  4px;
-
-    padding:    8px 16px;
-    spacing:    8px;
-    children:   [ prompt, entry ];
+    background-color: #f29ff5;   /* pink input background */
+    text-color: #000000;         /* black text */
+    border: 2px;
+    border-radius: 2px;
+    border-color: #f29ff5;
 }
 
-prompt {
-    text-color: @fg2;
-}
-
-entry {
-    placeholder:        "Search";
-    placeholder-color:  @fg3;
-}
-
-message {
-    margin:             12px 0 0;
-    border-radius:      16px;
-    border-color:       @bg2;
-    background-color:   @bg2;
-}
-
-textbox {
-    padding:    8px 24px;
-}
-
-listview {
-    background-color:   transparent;
-
-    margin:     12px 0 0;
-    lines:      8;
-    columns:    1;
-
-    fixed-height: false;
+/* === Consistent rounded elements === */
+window,
+listview,
+message,
+button {
+    border-radius: 2px;
+    border-color: #f29ff5;
 }
 
 element {
-    padding:        8px 16px;
-    spacing:        8px;
-    border-radius:  16px;
+  orientation: horizontal;
+  children: [ element-icon, element-text ];
+  spacing: 10px;
 }
 
-element normal active {
-    text-color: @bg3;
-}
-
-element alternate active {
-    text-color: @bg3;
-}
-
-element selected normal, element selected active {
-    background-color:   @bg3;
-}
-
-element-icon {
-    size:           1em;
-    vertical-align: 0.5;
-}
-
-element-text {
-    text-color: inherit;
+entry {
+    margin: 0px 0 0;
+    placeholder: ">";
+    cursor-color: #000000;
+    cursor-width: 6px;
+    hide-cursor-on-empty: true;
+    /* Make input text bolder */
+    font: "RobotoMono Nerd Font 12";
+    font-weight: 1000;
+    prompt: "asdasd";
 }
