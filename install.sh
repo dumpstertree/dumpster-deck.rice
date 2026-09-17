@@ -39,6 +39,7 @@ cp -r .bashrc ~/.bashrc
 rm -rf ~/.local/share/applications/rice
 cp -r .local/share/applications ~/.local/share/applications/rice
 
+chmod +x ~/.config/rofi/scripts/*.sh
 
 # echo "Installing Applications"
 
