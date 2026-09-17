@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot
+Exec=/bin/sh -c "~/.config/rofi/scripts/reboot.sh"
+Icon=system-shutdown
+Categories=System;
+Terminal=false
