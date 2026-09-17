@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Nightmode
+Exec=/bin/sh -c "~/.config/rofi/scripts/nightmode.sh"
+Icon=moon
+Categories=System;
+Terminal=false
