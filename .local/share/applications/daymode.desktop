@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Daymode
+Exec=/bin/sh -c "~/.config/rofi/scripts/daymode.sh"
+Icon=sun
+Categories=System;
+Terminal=false
