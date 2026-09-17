@@ -41,28 +41,11 @@ cp -r .local/share/applications ~/.local/share/applications/rice
 
 chmod +x ~/.config/rofi/scripts/*.sh
 
-# echo "Installing Applications"
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
- # hyprpm update
- 
- # hyprpm add https://github.com/KZDKM/Hyprspace
- # hyprpm add https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
-
- # hyprpm enable hyprspace
- # hyprpm enable hyprbars
- 
- # hyprpm reload
-
-# echo "Installing System Dependencies"
-# sudo pacman -S --needed \
-#     mako \
-#     wl-clipboard \
-#     grim \
-#     slurp \
-#     brightnessctl \
-#     pipewire \
-#     wireplumber \
-#     NetworkManager 
+sudo auto-cpufreq --install
+systemctl enable --now auto-cpufreq 
 
 # echo "Installing Hyprland Plugins"
 
