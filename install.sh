@@ -10,9 +10,13 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
-    hyprlauncher \
     hyprpm \
-    rofi
+    rofi \
+    fastfetch \
+    kitty \
+    librewolf \
+    waybar \
+    thunar \
 
 mkdir -p ~/.config
 
@@ -25,14 +29,13 @@ cp -r waybar ~/.config/waybar
 rm -rf ~/.config/rofi
 cp -r rofi ~/.config/rofi
 
+rm -rf ~/.config/kitty
+cp -r rofi ~/.config/kitty
 
+rm -rf ~/.bashrc
+cp -r .bashrc ~/.bashrc
 
 # echo "Installing Applications"
-sudo pacman -S --needed \
-    kitty \
-    librewolf \
-    waybar \
-    thunar \
 
  # hyprpm update
  
