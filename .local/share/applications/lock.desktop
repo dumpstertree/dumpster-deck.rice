@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Lock
+Exec=/bin/sh -c "~/.config/rofi/scripts/lock.sh"
+Icon=system-shutdown
+Categories=System;
+Terminal=false
