@@ -10,6 +10,7 @@ sudo pacman -S --needed \
     hyprpaper \
     hyprlock \
     hypridle \
+    hyprsunset \
     hyprpm \
     rofi \
     fastfetch \
@@ -34,6 +35,10 @@ cp -r rofi ~/.config/kitty
 
 rm -rf ~/.bashrc
 cp -r .bashrc ~/.bashrc
+
+rm -rf ~/.local/share/applications/rice
+cp -r .local/share/applications ~/.local/share/applications/rice
+
 
 # echo "Installing Applications"
 
