@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Shutdown
+Exec=/bin/sh -c "~/.config/rofi/scripts/shutdown.sh"
+Icon=system-shutdown
+Categories=System;
+Terminal=false
