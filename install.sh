@@ -33,8 +33,15 @@ cp -r rofi ~/.config/rofi
 rm -rf ~/.config/kitty
 cp -r rofi ~/.config/kitty
 
+rm -rf ~/.config/fastfetch
+cp -r fastfetch ~/.config/fastfetch
+
 rm -rf ~/.bashrc
 cp -r .bashrc ~/.bashrc
+
+rm -rf ~/.zshrc
+cp -r .zshrc ~/.zshrc
+
 
 rm -rf ~/.local/share/applications/rice
 cp -r .local/share/applications ~/.local/share/applications/rice
@@ -45,10 +52,9 @@ git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
 sudo auto-cpufreq --install
-systemctl enable --now auto-cpufreq 
+systemctl enable --now auto-cpufreq
 
-# echo "Installing Hyprland Plugins"
-
-# echo "Linking Configs"
+# need to install zsh first
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 
