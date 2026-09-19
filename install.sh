@@ -18,6 +18,7 @@ sudo pacman -S --needed \
     librewolf \
     waybar \
     thunar \
+    cava
 
 mkdir -p ~/.config
 
