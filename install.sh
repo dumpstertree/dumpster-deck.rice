@@ -18,7 +18,7 @@ sudo pacman -S --needed \
     librewolf \
     waybar \
     thunar \
-    cava |
+    cava \
     pipewire-pulse \ 
     wireplumber \
     keyd
@@ -45,6 +45,9 @@ cp -r .bashrc ~/.bashrc
 
 rm -rf ~/.zshrc
 cp -r .zshrc ~/.zshrc
+
+rm -rf /etc/keyd/default.conf
+cp keyd.conf /etc/keyd/default.conf
 
 sudo systemctl enable --now keyd
 
