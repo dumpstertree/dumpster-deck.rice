@@ -21,7 +21,7 @@ sudo pacman -S --needed \
     cava |
     pipewire-pulse \ 
     wireplumber \
-    xorg-xmodmap
+    keyd
 
 mkdir -p ~/.config
 
@@ -45,6 +45,8 @@ cp -r .bashrc ~/.bashrc
 
 rm -rf ~/.zshrc
 cp -r .zshrc ~/.zshrc
+
+sudo systemctl enable --now keyd
 
 
 rm -rf ~/.local/share/applications/rice
