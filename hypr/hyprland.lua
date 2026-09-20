@@ -42,6 +42,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 ---- LOOK AND FEEL ----
 -----------------------
 
+
 hl.config({
     general = {
         gaps_in  = 5,
@@ -66,6 +67,76 @@ hl.config({
     },
 })
 
+--------------------------------
+------ ROFI ANIMATION ----------
+--------------------------------
+
+hl.layer_rule({
+    name = "rofi-slide-in",
+    match = {
+        namespace = "rofi",
+    },
+    animation = "slide bottom",
+    dim_around =true,
+})
+
+-- Fun + snappy window animations
+hl.curve("snappy", {
+    type = "bezier",
+    points = {
+        {0.0, 0.2},
+        {0.25, 1.0 }
+    }
+})
+
+hl.curve("quickOut", {
+    type = "bezier",
+    points = {
+        {0, 0.5},
+        {.5, 1.0},
+    }
+})
+
+hl.animation({
+    leaf = "windows",
+    enabled = true,
+    speed = 4,
+    bezier = "snappy",
+})
+
+-- New windows slide up from the bottom
+hl.animation({
+    leaf = "windowsIn",
+    enabled = true,
+    speed =3,
+    bezier = "snappy",
+    style = "slide bottom",
+})
+
+-- Closing windows slide back down
+hl.animation({
+    leaf = "windowsOut",
+    enabled = true,
+    speed = 5,
+    bezier = "snappy",
+    style = "slide bottom",
+})
+
+hl.animation({
+    leaf = "fadeIn",
+    enabled = true,
+    speed = 3,
+    bezier = "snappy",
+})
+
+hl.animation({
+    leaf = "fadeOut",
+    enabled = true,
+    speed = 3,
+    bezier = "quickOut",
+})
+
+
 -- Default curves and animations, see https://wiki.hypr.land/configuring/core/animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
@@ -78,11 +149,11 @@ hl.curve("easy",           { type = "spring", mass = 2, stiffness = 1000, dampen
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
-hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
-hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
+-- hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
+-- hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
+-- hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
+-- hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
+-- hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
 hl.animation({ leaf = "fade",          enabled = true,  speed = 3.03, bezier = "quick" })
 hl.animation({ leaf = "layers",        enabled = true,  speed = 3.81, bezier = "easeOutQuint" })
 hl.animation({ leaf = "layersIn",      enabled = true,  speed = 4,    bezier = "easeOutQuint", style = "fade" })
@@ -157,6 +228,12 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind( mainMod .. " + SPACE", hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill -x rofi; else rofi -show drun; fi") )
 hl.bind( mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill -x rofi; else rofi -show calc --no-history; fi") )
 
+hl.on("window.active", function(ws)
+    hl.exec_cmd("pkill -x rofi")
+end)
+hl.on("workspace.active", function(ws)
+    hl.exec_cmd("pkill -x rofi")
+end)
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(terminal))
@@ -182,16 +259,11 @@ hl.bind(mainMod .. " + SHIFT + LEFT", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind(mainMod .. " + SHIFT + UP",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"),         { locked = true, repeating = true })
-hl.bind(mainMod .. " + SHIFT + DOWN" ,hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%-"),         { locked = true, repeating = true })
+hl.bind(mainMod .. " + ALT + RIGHT", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + ALT + LEFT", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),       { locked = true, repeating = true })
 
--- Laptop multimedia keys for volume and LCD brightness
---hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
---hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
---hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
---hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
---hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
---hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
+hl.bind(mainMod .. " + ALT + UP", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                     { locked = true, repeating = true })
+hl.bind(mainMod .. " + ALT + DOWN", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                   { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
@@ -255,7 +327,23 @@ hl.config({
 	        ["col.text"] = "rgb(000000)",
             bar_color = "rgb(f29ff5)",
             bar_height = 15,
-	        bar_text_align = left,
+	        bar_text_align = "left",
+            bar_text_font = "SFMono",
+            bar_text_weight = 600,
+            bar_text_size = 10
+        },
+    },
+})
+
+hl.config({
+    plugin = {
+        hyprfocus = {
+            enabled = yes,
+            -- keyboard_focus_animation = "slide",
+            -- mouse_focus_animation = "slide",
+            -- shrink_percentage = 0.9,
+            -- slide_height = 5.0,
+            -- in_speed = 1.0,
         },
     },
 })
