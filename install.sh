@@ -20,7 +20,8 @@ sudo pacman -S --needed \
     thunar \
     cava |
     pipewire-pulse \ 
-    wireplumber
+    wireplumber \
+    xorg-xmodmap
 
 mkdir -p ~/.config
 
