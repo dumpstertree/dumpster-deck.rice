@@ -21,8 +21,11 @@ sudo pacman -S --needed \
     cava \
     pipewire-pulse \ 
     wireplumber \
-    keyd
+    keyd \
+    grim \
+    slurp
 
+mkdir -p ~/Pictures/Screenshots/
 mkdir -p ~/.config
 
 rm -rf ~/.config/hypr
