@@ -25,8 +25,10 @@ sudo pacman -S --needed \
     grim \
     slurp
 
-mkdir -p ~/Pictures/Screenshots/
 mkdir -p ~/.config
+
+rm -rf ~/.local/bin/screenshot
+cp -r bin/screenshot ~/.local/bin/screenshot
 
 rm -rf ~/.config/hypr
 cp -r hypr ~/.config/hypr
