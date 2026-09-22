@@ -75,6 +75,37 @@ cd auto-cpufreq && sudo ./auto-cpufreq-installer
 sudo auto-cpufreq --install
 systemctl enable --now auto-cpufreq
 
+# remove thunar-bulk-rename
+cp /usr/share/applications/thunar-bulk-rename.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/thunar-bulk-rename.desktop
+
+# remove thunar
+cp /usr/share/applications/thunar.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/thunar.desktop
+
+# remove librewolf
+cp /usr/share/applications/librewolf.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/librewolf.desktop
+
+# remove rofi application
+cp /usr/share/applications/rofi.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/rofi.desktop
+
+# remove rofi-theme-selector
+cp /usr/share/applications/rofi-theme-selector.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/rofi-theme-selector.desktop
+
+# remove thunar application
+cp /usr/share/applications/avahi-discover.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/avahi-discover.desktop
+
+# remove thunar application
+cp /usr/share/applications/btrfs-assistant.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/btrfs-assistant.desktop
+
+
+
+
 # need to install zsh first
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
