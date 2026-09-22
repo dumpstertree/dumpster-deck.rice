@@ -103,6 +103,22 @@ sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/avahi-di
 cp /usr/share/applications/btrfs-assistant.desktop ~/.local/share/applications/
 sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/btrfs-assistant.desktop
 
+# remove thunar application
+cp /usr/share/applications/xgps.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/xgps.desktop
+
+# remove thunar application
+cp /usr/share/applications/xgpsspeed.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/xgpsspeed.desktop
+
+cp /usr/share/applications/thunar-settings.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/thunar-settings.desktop
+
+cp /usr/share/applications/qv4l2.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/qv4l2.desktop
+
+cp /usr/share/applications/qvidcap.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/qvidcap.desktop
 
 
 
