@@ -120,6 +120,9 @@ sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/qv4l2.de
 cp /usr/share/applications/qvidcap.desktop ~/.local/share/applications/
 sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/qvidcap.desktop
 
+cp /usr/share/applications/cmake-gui.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/cmake-gui.desktop
+
 
 
 # need to install zsh first
