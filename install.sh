@@ -23,7 +23,11 @@ sudo pacman -S --needed \
     wireplumber \
     keyd \
     grim \
-    slurp
+    slurp \
+    dunst \
+    libnotify
+
+systemctl --user enable --now dunst  
 
 mkdir -p ~/.config
 
