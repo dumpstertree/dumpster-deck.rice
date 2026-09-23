@@ -53,8 +53,17 @@ cp -r rofi ~/.config/kitty
 rm -rf ~/.config/fastfetch
 cp -r fastfetch ~/.config/fastfetch
 
+rm -rf ~/.config/dunst
+cp -r dunst ~/.config/dunst
+
+rm -rf ~/.config/gtk-3.0
+cp -r gtk-3.0 ~/.config/gtk-3.0
+
 rm -rf ~/.bashrc
 cp -r .bashrc ~/.bashrc
+
+rm -rf ~/.zshrc
+cp -r .zshrc ~/.zshrc
 
 rm -rf ~/.zshrc
 cp -r .zshrc ~/.zshrc
