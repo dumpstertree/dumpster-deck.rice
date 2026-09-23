@@ -137,4 +137,13 @@ sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/auto-cpu
 # need to install zsh first
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
+gsettings set org.gnome.desktop.interface icon-theme Luv
+
+git clone https://github.com/Nitrux/luv-icon-theme.git
+cd luv-icon-theme
+sudo cp -r Luv /usr/share/icons/
+cd ..
+
+rm -R luv-icon-theme
+
 
