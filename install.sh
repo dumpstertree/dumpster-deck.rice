@@ -32,10 +32,15 @@ systemctl --user enable --now dunst
 
 mkdir -p ~/.config
 
+
 rm -rf ~/.local/bin/screenshot
 cp -r bin/screenshot ~/.local/bin/screenshot
-
 chmod +x ~/.local/bin/screenshot
+
+rm -rf ~/.local/bin/battery-notify
+cp -r bin/battery-notify ~/.local/bin/battery-notify
+chmod +x ~/.local/bin/battery-notify
+
 
 
 rm -rf ~/.config/hypr
