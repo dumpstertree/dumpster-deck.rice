@@ -125,8 +125,8 @@ cp /usr/share/applications/cmake-gui.desktop ~/.local/share/applications/
 sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/cmake-gui.desktop
 
 
-cp /usr/share/applications/org-gnome-SystemMonitor.desktop ~/.local/share/applications/
-sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/org-gnome-SystemMonitor.desktop
+cp /usr/share/applications/org.gnome.SystemMonitor.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/org.gnome.SystemMonitor.desktop
 
 
 
