@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while true; do
+    battery=$(cat /sys/class/power_supply/BAT0/capacity)
+    status=$(cat /sys/class/power_supply/BAT0/status)
+
+    if [ "$battery" -le 15 ] && [ "$status" = "Discharging" ]; then
+        notify-send \
+            -u critical \
+            -i battery-caution \
+            "Battery Critical" \
+            "Battery is at ${battery}%"
+        sleep 300
+    else
+        sleep 30
+    fi
+done
