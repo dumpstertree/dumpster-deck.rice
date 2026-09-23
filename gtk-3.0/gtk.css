@@ -1,0 +1,311 @@
+/* ============================================================
+   THUNAR / GTK THEME
+   Matches Waybar / Hyprbars
+   ============================================================ */
+
+/* ---------- Colors ---------- */
+
+@define-color background #111316;
+@define-color background-dark #000000;
+@define-color background-hover #1b1e22;
+
+@define-color text #f29ff5;
+@define-color text-secondary #95f5e2;
+@define-color text-dim #8b8580;
+
+@define-color focused #f29ff5;
+@define-color focused2 #BFAA80;
+
+@define-color urgent #B05A5A;
+
+@define-color border #A0907A;
+
+
+/* ---------- Global ---------- */
+
+* {
+    font-family: "SFMono";
+    font-size: 11px;
+    font-weight: 600;
+
+    color: @text;
+}
+
+
+/* ---------- Main window ---------- */
+
+window,
+.background {
+    background-color: @background;
+    color: @text;
+}
+
+
+/* ---------- Headerbar ---------- */
+
+headerbar {
+    min-height: 15px;
+    padding: 0 6px;
+
+    background-color: @background-dark;
+    color: @text;
+
+    border: 1px solid @focused;
+    border-radius: 2px;
+
+    box-shadow: none;
+}
+
+
+/* Headerbar title */
+
+headerbar .title {
+    color: @text;
+    font-family: "SFMono";
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* Headerbar buttons */
+
+headerbar button {
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0 5px;
+
+    background: transparent;
+    color: @text;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+headerbar button:hover {
+    background-color: @text;
+    color: #111316;
+}
+
+
+/* ---------- Toolbar ---------- */
+
+toolbar {
+    background-color: @background;
+    color: @text;
+
+    border: none;
+    box-shadow: none;
+}
+
+toolbar button {
+    padding: 3px 6px;
+
+    background-color: transparent;
+    color: @text;
+
+    border: none;
+    border-radius: 0;
+}
+
+toolbar button:hover {
+    background-color: @text;
+    color: #111316;
+}
+
+
+/* ---------- Location / path bar ---------- */
+
+entry {
+    background-color: #000000;
+    color: @text;
+
+    border: 1px solid @border;
+    border-radius: 2px;
+
+    caret-color: @text;
+    box-shadow: none;
+}
+
+entry:focus {
+    border-color: @focused;
+}
+
+
+/* ---------- File view ---------- */
+
+.view {
+    background-color: @background;
+    color: @text;
+}
+
+
+/* File names */
+
+.view text {
+    color: @text;
+}
+
+
+/* Selected file */
+
+.view:selected,
+.view text:selected {
+    background-color: @focused;
+    color: #111316;
+}
+
+
+/* Hovered file */
+
+.view:hover {
+    background-color: @background-hover;
+}
+
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+    background-color: #000000;
+    color: @text;
+
+    border-right: 1px solid @border;
+}
+
+.sidebar row {
+    padding: 3px 6px;
+
+    color: @text;
+    background-color: transparent;
+
+    border-radius: 0;
+}
+
+.sidebar row:hover {
+    background-color: @background-hover;
+    color: @text-charging;
+}
+
+.sidebar row:selected {
+    background-color: @text;
+    color: #111316;
+}
+
+
+/* ---------- Sidebar labels ---------- */
+
+.sidebar label {
+    color: @text;
+}
+
+
+/* ---------- Separators ---------- */
+
+separator {
+    background-color: @border;
+}
+
+
+/* ---------- Menus ---------- */
+
+menu,
+.menu {
+    background-color: #000000;
+    color: @text;
+
+    border: 1px solid @border;
+    border-radius: 2px;
+}
+
+menuitem,
+.menuitem {
+    padding: 4px 8px;
+
+    color: @text;
+}
+
+menuitem:hover,
+.menuitem:hover {
+    background-color: @text;
+    color: #111316;
+}
+
+
+/* ---------- Scrollbars ---------- */
+
+scrollbar {
+    background-color: #000000;
+}
+
+scrollbar slider {
+    min-width: 5px;
+    min-height: 5px;
+
+    background-color: @border;
+    border-radius: 0;
+}
+
+scrollbar slider:hover {
+    background-color: @text;
+}
+
+
+/* ---------- Tooltips ---------- */
+
+tooltip {
+    background-color: #000000;
+    color: @text;
+
+    border: 1px solid @focused;
+    border-radius: 2px;
+}
+
+tooltip label {
+    color: @text;
+}
+
+
+/* ---------- Checkboxes / radio buttons ---------- */
+
+checkbutton,
+radiobutton {
+    color: @text;
+}
+
+checkbutton:hover,
+radiobutton:hover {
+    color: @text-secondary;
+}
+
+
+/* ---------- Focus ---------- */
+
+*:focus {
+    outline-color: @focused;
+    outline-width: 1px;
+}
+
+
+/* ---------- Thunar-specific ---------- */
+
+/* Compact file list */
+
+.thunar .view {
+    padding: 2px;
+}
+
+/* Status bar */
+
+statusbar {
+    background-color: #000000;
+    color: @text;
+    border-top: 1px solid @border;
+}
+
+
+/* ---------- Accent states ---------- */
+
+*:selected {
+    background-color: @focused;
+    color: #111316;
+}
