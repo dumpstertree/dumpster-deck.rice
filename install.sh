@@ -128,6 +128,10 @@ sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/cmake-gu
 cp /usr/share/applications/org.gnome.SystemMonitor.desktop ~/.local/share/applications/
 sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/org.gnome.SystemMonitor.desktop
 
+cp /usr/share/applications/auto-cpufreq-gtk.desktop ~/.local/share/applications/
+sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/auto-cpufreq-gtk.desktop
+
+
 
 
 # need to install zsh first
