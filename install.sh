@@ -26,7 +26,9 @@ sudo pacman -S --needed \
     slurp \
     dunst \
     libnotify \
-    gnome-system-monitor
+    gnome-system-monitor \
+    greetd \
+    greetd-tuigreet
 
 systemctl --user enable --now dunst  
 
@@ -72,6 +74,9 @@ cp -r .zshrc ~/.zshrc
 
 rm -rf ~/.zshrc
 cp -r .zshrc ~/.zshrc
+
+rm -rf /etc/greetd/config.toml
+cp -r /greetd/config.toml /etc/greetd/config.toml
 
 rm -rf /etc/keyd/default.conf
 cp keyd.conf /etc/keyd/default.conf
@@ -147,6 +152,7 @@ sed -i '/^\[Desktop Entry\]$/a Hidden=true' ~/.local/share/applications/auto-cpu
 
 
 
+systemctl enable greetd.service
 
 # need to install zsh first
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
